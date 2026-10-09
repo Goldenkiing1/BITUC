@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bituc (BITUC)</title>
+<style>
+:root{--bg:#ffffff;--fg:#14141f;--muted:#5b5b70;--card:#f4f4fa;--line:#e1e1ee;--accent:#5b3df0;--warn-bg:#fff6e0;--warn-fg:#6b4a00;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f0f17;--fg:#f0f0fa;--muted:#a3a3bd;--card:#191926;--line:#2b2b40;--accent:#9a86ff;--warn-bg:#2a2210;--warn-fg:#f1d58a}}
+:root[data-theme="dark"]{--bg:#0f0f17;--fg:#f0f0fa;--muted:#a3a3bd;--card:#191926;--line:#2b2b40;--accent:#9a86ff;--warn-bg:#2a2210;--warn-fg:#f1d58a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:680px;margin:0 auto;padding:28px 18px 56px}
+header{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+header svg{width:56px;height:56px;flex:none}
+h1{font-size:2rem;margin:0;line-height:1.1}
+.tag{color:var(--muted);margin:2px 0 0}
+h2{font-size:1.15rem;margin:30px 0 8px}
+p{margin:8px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:8px 16px}
+dt{color:var(--muted)}dd{margin:0;overflow-wrap:anywhere}
+.addr{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88rem}
+button,a.btn{font:inherit;background:var(--accent);color:#fff;border:0;border-radius:10px;padding:8px 14px;cursor:pointer;text-decoration:none;display:inline-block;margin-top:10px}
+a{color:var(--accent)}
+.warn{background:var(--warn-bg);color:var(--warn-fg);border-radius:14px;padding:14px 16px;margin-top:24px}
+ol{padding-left:22px;margin:8px 0}
+footer{margin-top:36px;color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<main>
+<header>
+<svg viewBox="0 0 256 256" aria-label="Bituc logo"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#2563EB"/></linearGradient></defs><circle cx="128" cy="128" r="124" fill="url(#g)"/><path d="M92 66 H138 C164 66 180 80 180 101 C180 116 172 126 159 131 C176 135 187 147 187 165 C187 189 168 202 140 202 H92 Z M120 90 V119 H136 C147 119 153 114 153 104 C153 94 147 90 136 90 Z M120 143 V178 H139 C151 178 158 172 158 160 C158 148 151 143 139 143 Z" fill="#fff" fill-rule="evenodd"/></svg>
+<div><h1>Bituc</h1><p class="tag">BITUC &middot; an experimental token</p></div>
+</header>
+
+<p>Bituc is an experimental ERC-20 token on OP Mainnet (Optimism). Planned uses include community rewards and tipping. The supply is fixed and no more tokens can ever be created.</p>
+
+<h2>Token details</h2>
+<div class="card">
+<dl>
+<dt>Name</dt><dd>Bituc</dd>
+<dt>Symbol</dt><dd>BITUC</dd>
+<dt>Network</dt><dd>OP Mainnet (chain ID 10)</dd>
+<dt>Total supply</dt><dd>500,000,000 (fixed)</dd>
+<dt>Decimals</dt><dd>18</dd>
+<dt>Contract</dt><dd class="addr" id="addr">0x845e5Ab0e4EAA902AdAF080717D6eECa6Dfd528C</dd>
+</dl>
+<button id="copy" type="button">Copy contract address</button>
+<a class="btn" href="https://optimistic.etherscan.io/token/0x845e5Ab0e4EAA902AdAF080717D6eECa6Dfd528C" rel="noopener">View on explorer</a>
+</div>
+<p>The contract source code is verified on the OP Mainnet explorer. It has no owner, no minting function after deployment, and no transfer fees.</p>
+
+<h2>Add BITUC to your wallet</h2>
+<ol>
+<li>Install a wallet such as MetaMask and keep your recovery phrase private.</li>
+<li>Switch the wallet to OP Mainnet.</li>
+<li>Open Import tokens and paste the contract address above.</li>
+</ol>
+
+<h2>Community</h2>
+<p>Discord: <a href="https://discord.gg/u7mAKsP5k" rel="noopener">https://discord.gg/u7mAKsP5k</a></p>
+<p>Contact: <a href="mailto:P4yback28@gmail.com">P4yback28@gmail.com</a></p>
+
+<div class="warn"><strong>Please read.</strong> Bituc is brand new and has very little liquidity. Its price can swing sharply and it may be flagged as a new or unverified token in some wallets. It is not an investment and nothing here is financial advice. Only trust the contract address on this page, and never share your recovery phrase with anyone. Project admins will never ask for it.</div>
+
+<footer>Bituc is an experimental project. This page lists facts only and makes no promises about price or returns.</footer>
+</main>
+<script>
+document.getElementById('copy').addEventListener('click',function(){
+var t=document.getElementById('addr').textContent,b=this;
+try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy contract address'},1500)})}catch(e){b.textContent='Select and copy the address above'}
+});
+</script>
+</body>
+</html>
